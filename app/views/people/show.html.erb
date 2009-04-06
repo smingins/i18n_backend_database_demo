@@ -1,0 +1,23 @@
+<h3><%= I18n.t('Hi from {{person}}, should work!  And with {{my_link}}', :person => @person.name, :my_link => people_path) %></h3>
+
+<%= I18n.t('Add a New Photo') %>                              
+<%= I18n.t('Add a New Photo') %>                              
+<%= I18n.t('add a new photo') %>                              
+<p>
+  <b>Name:</b>
+  <%=h @person.name %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @person.city %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%=h @person.age %>
+</p>
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>

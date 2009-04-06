@@ -1,0 +1,21 @@
+<h1><%= I18n.t("Listing posts") %></h1><h1><%= I18n.t("Listing posts in same line!") %></h1>
+<%= image_tag(I18n.ta("batman.jpg"), :height => "100", :width => "100") %>
+<table>
+  <tr>
+    <th>Content</th>
+  </tr>
+
+<% for post in @posts %>
+  <tr>
+    <td><%=h I18n.t(post.content) %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New post', new_post_path(:locale => I18n.locale) %> |
+<%= link_to 'Locale', locale_posts_path %>
